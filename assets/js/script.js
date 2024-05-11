@@ -59,6 +59,7 @@ overlay.addEventListener("click", testimonialsModalFunc);
 const select = document.querySelector("[data-select]");
 const selectItems = document.querySelectorAll("[data-select-item]");
 const selectValue = document.querySelector("[data-select-value]");
+const selectValue = document.querySelector("[data-select-value]");
 const filterBtn = document.querySelectorAll("[data-filter-btn]");
 
 select.addEventListener("click", function () { elementToggleFunc(this); });
@@ -158,6 +159,8 @@ for (let i = 0; i < navigationLinks.length; i++) {
   });
 }
 
+
+
 // Function to open the popup panel
 function openPopup(projectId) {
   var popup = document.getElementById(projectId);
@@ -203,19 +206,33 @@ popupContent.addEventListener('click', () => {
     popupContent.classList.toggle('has-scrollbar');
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-  const expandableSection = document.querySelector('.expandable-section');
-  const toggleIcon = expandableSection.querySelector('.toggle-icon');
 
-  toggleIcon.addEventListener('click', function() {
-      expandableSection.classList.toggle('expanded');
-      if (expandableSection.classList.contains('expanded')) {
-          toggleIcon.setAttribute('name', 'remove'); // Change plus icon to minus icon
-      } else {
-          toggleIcon.setAttribute('name', 'add'); // Change minus icon to plus icon
-      }
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Select all expandable sections
+  const expandableSections = document.querySelectorAll('.expandable-section');
+
+  // Loop through each expandable section
+  expandableSections.forEach(function(section) {
+      // Select the toggle icon and details for each section
+      const toggleIcon = section.querySelector('.toggle-icon');
+      const details = section.querySelector('.details');
+
+      // Add click event listener to toggle icon
+      toggleIcon.addEventListener('click', function() {
+          // Toggle the 'expanded' class on the current section
+          section.classList.toggle('expanded');
+
+          // Change the icon based on the 'expanded' class
+          if (section.classList.contains('expanded')) {
+              toggleIcon.setAttribute('name', 'remove'); // Change plus icon to minus icon
+          } else {
+              toggleIcon.setAttribute('name', 'add'); // Change minus icon to plus icon
+          }
+      });
   });
 });
+
 
 
 
