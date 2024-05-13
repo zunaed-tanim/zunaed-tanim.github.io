@@ -1064,8 +1064,33 @@ main {
   z-index: 1;
   max-height: 90%; /* Adjust the maximum width of the content */
   max-width: 90%; /* Adjust the maximum width of the content */
-  
+  overflow: auto;
 }
+
+/* Hide the default scrollbar */
+.popup-content::-webkit-scrollbar {
+  width:5px; /* Width of the scrollbar */
+  height: fit-content;
+}
+
+/* Track */
+.popup-content::-webkit-scrollbar-track {
+  background: var(--bg-gradient-jet); /* Color of the track */
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+/* Handle */
+.popup-content::-webkit-scrollbar-thumb {
+  background: var(--bg-gradient-onyx); /* Color of the handle */
+  border-radius: 5px; /* Radius of the handle */
+}
+
+/* Handle on hover */
+.popup-content::-webkit-scrollbar-thumb:hover {
+  background: var(--vegas-gold); /* Color of the handle on hover */
+}
+
 
 /* .popup-content::before {
   content: "";
@@ -1124,29 +1149,6 @@ main {
   justify-content: space-between;
   list-style: none; /* Remove default list styles */
   padding: 5px; /* Remove default padding */
-}
-
-.popup-content-info-container.has-scrollbar {
-  overflow: auto; /* Enable scrollbars when content overflows */
-}
-
-.popup-content-info-container.has-scrollbar::-webkit-scrollbar {
-  width: 8px; /* Adjust width of vertical scrollbar */
-  height: 8px; /* Adjust height of horizontal scrollbar */
-}
-
-.popup-content-info-container.has-scrollbar::-webkit-scrollbar-track {
-  background: var(--onyx); /* Track color */
-  border-radius: 5px; /* Track border radius */
-}
-
-.popup-content-info-container.has-scrollbar::-webkit-scrollbar-thumb {
-  background: var(--light-gray); /* Thumb color */
-  border-radius: 5px; /* Thumb border radius */
-}
-
-.popup-content-info-container.has-scrollbar::-webkit-scrollbar-button {
-  width: 20px; /* Adjust width of scrollbar button */
 }
 
 .popup-content-header {
