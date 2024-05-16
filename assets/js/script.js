@@ -235,4 +235,61 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+document.addEventListener('DOMContentLoaded', () => {
+  const carousels = document.querySelectorAll('.carousel');
+  
+  carousels.forEach(carousel => {
+      const id = carousel.getAttribute('id');
+      let slideIndex = 1;
+
+      showSlides(id, slideIndex);
+
+      carousel.querySelectorAll('.carousel-control-prev').forEach(button => {
+          button.addEventListener('click', () => {
+              showSlides(id, --slideIndex);
+          });
+      });
+
+      carousel.querySelectorAll('.carousel-control-next').forEach(button => {
+          button.addEventListener('click', () => {
+              showSlides(id, ++slideIndex);
+          });
+      });
+
+      carousel.querySelectorAll('.dot').forEach(dot => {
+          dot.addEventListener('click', () => {
+              const slideTo = parseInt(dot.getAttribute('data-slide-to'));
+              showSlides(id, slideTo);
+          });
+      });
+
+      function showSlides(carouselId, n) {
+          const carousel = document.getElementById(carouselId);
+          const slides = carousel.querySelectorAll('.carousel-item');
+          const dots = carousel.querySelectorAll('.dot');
+
+          if (n > slides.length) { slideIndex = 1; }
+          if (n < 1) { slideIndex = slides.length; }
+          if (n > 0 && n <= slides.length) { slideIndex = n; }
+
+          slides.forEach((slide, index) => {
+              slide.style.display = (index === slideIndex - 1) ? 'block' : 'none';
+              slide.classList.toggle('active', index === slideIndex - 1);
+          });
+
+          dots.forEach((dot, index) => {
+              dot.classList.toggle('active', index === slideIndex - 1);
+          });
+      }
+  });
+});
+
+
+
+
+
+
+
+
+
 
