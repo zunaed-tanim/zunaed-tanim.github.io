@@ -1097,12 +1097,12 @@ main {
 
 .popup-content-left {
   text-align: left;
-  width: 50%;
+  width: 48%;
 }
 
 .popup-content-right {
   text-align:left;
-  width: 50%;
+  width: 48%;
 }
 
 .popup-content-title {
@@ -1167,6 +1167,14 @@ main {
 
 .popup-content-info-icon ion-icon { --ionicon-stroke-width: 40px; }
 
+.carousel-container {
+  position: relative;
+  width: max-content;  /* Adjust as needed */
+  height: max-content; /* Adjust as needed */
+  overflow: hidden;
+  margin: 0 auto; /* Center horizontally */
+}
+
 .carousel {
   position: relative;
   max-width: 100%;
@@ -1174,7 +1182,7 @@ main {
 }
 
 .carousel-inner {
-  display: flex;
+  display:flex;
   overflow: auto;
   width: 100%;
 }
@@ -1193,12 +1201,15 @@ main {
 .carousel-control-prev,
 .carousel-control-next {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
+  top: 20%;
+  bottom: 20%;
+  transform: translateY(-5%);
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 4px;
   border: none;
   color: white;
   padding: 10px;
+  margin-bottom: 10%;
   cursor: pointer;
   z-index: 1;
 }
@@ -2176,4 +2187,34 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .timeline-text { max-width: 700px; }
 
+}
+
+
+
+
+/* Footer styles */
+.site-footer {
+  color: var(--light-gray-70); /* Adjust color to your site's theme */
+  padding: 20px 0;
+  text-align: center;
+  position:relative;
+
+  width: 100%;
+  font-size: var(--fs-8);
+  font-weight: var(--fw-400);
+}
+
+.site-footer .container {
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.site-footer a {
+  color: var(--light-gray); /* Adjust color to your site's theme */
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
 }
