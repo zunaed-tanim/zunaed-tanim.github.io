@@ -1092,17 +1092,34 @@ main {
 }
 
 .popup-content-center {
+  flex: auto;
   text-align: center;
+  padding: 10px;
 }
 
 .popup-content-left {
+  flex: 1;
   text-align: left;
-  width: 48%;
+  padding: 10px;
 }
 
 .popup-content-right {
-  text-align:left;
-  width: 48%;
+  flex: 1;
+  text-align: left;
+  padding: 10px;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) { /* Adjust the max-width to your breakpoint */
+  .popup-content {
+      display: block;
+  }
+
+  .popup-content-left,
+  .popup-content-right {
+      width: 100%; /* Make both divs take full width on mobile */
+      padding: 10px 0; /* Optional: Adjust padding for vertical layout */
+  }
 }
 
 .popup-content-title {
