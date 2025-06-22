@@ -1258,7 +1258,6 @@ main {
   background-color: #717171;
 }
 
-
 .try-now-btn {
   /* Styles for the "Try Now" button */
   display: inline-block;
@@ -1333,6 +1332,16 @@ main {
   text-align: center;
   position: relative;
 }
+
+.youtube-embed {
+  position: relative;
+  width: max-content; /* Adjust as needed */
+  height: 100%; /* Maintain aspect ratio */
+  overflow: hidden;
+  margin: auto; /* Center horizontally */
+  padding: auto;
+}
+
 
 
 /* Media query for smaller screens (e.g., tablets) */
